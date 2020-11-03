@@ -1,11 +1,11 @@
 import 'museosnavarra_model.dart';
 
 class Museos {
-  List<ListaMuseos> lista = new List();
+  List<Museo> lista = new List();
   Museos.fromJsonList(List<dynamic> jsonList) {
     if (jsonList == null) return;
     jsonList.forEach((json) {
-      final m = ListaMuseos.fromJson(json);
+      final m = Museo.fromJson(json);
       lista.add(m);
     });
   }

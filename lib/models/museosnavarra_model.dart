@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-ListaMuseos listaMuseosFromJson(String str) =>
-    ListaMuseos.fromJson(json.decode(str));
+Museo museoFromJson(String str) =>
+    Museo.fromJson(json.decode(str));
 
-String listaMuseosToJson(ListaMuseos data) => json.encode(data.toJson());
+String museoToJson(Museo data) => json.encode(data.toJson());
 
-class ListaMuseos {
-  ListaMuseos({
+class Museo {
+  Museo({
     this.id,
     this.imagen,
     this.nombre,
@@ -42,7 +42,7 @@ class ListaMuseos {
   String x;
   String y;
 
-  factory ListaMuseos.fromJson(Map<String, dynamic> json) => ListaMuseos(
+  factory Museo.fromJson(Map<String, dynamic> json) => Museo(
         id: json["ID"],
         imagen: json["IMAGEN"],
         nombre: json["NOMBRE"],

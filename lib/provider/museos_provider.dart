@@ -17,12 +17,12 @@ class MuseosProvider {
         "Berbinzana"
   ];
 
-  List<ListaMuseos> listamuseos = [];
+  List<Museo> listamuseos = [];
 
   List<String> listaLocalidades = [];
-  List<String> listaMuseosLocalidades = [];
+  List<Museo> listaMuseosLocalidades = [];
 
-  Future<List<ListaMuseos>> cargarMuseos() async {
+  Future<List<Museo>> cargarMuseos() async {
     final data = await rootBundle.loadString("assets/data/museos_es.json");
     final decodeData = json.decode(data);
     final museosNavarra = decodeData["MUSEOSNAVARRA"];
@@ -45,15 +45,14 @@ class MuseosProvider {
     return listaLocalidades;
   }
 
-  Future<List<String>> cargarMuseosLocalidades(localidad) async {
+  Future<List<Museo>> cargarMuseosLocalidades(localidad) async {
     if (listamuseos.length == 0) {
       await cargarMuseos();
     }
     listaMuseosLocalidades = [];
     listamuseos.forEach((m) {
-      if ((m.localidad == localidad) &&
-          (listaMuseosLocalidades.indexOf(m.localidad) < 0)) {
-        listaMuseosLocalidades.add(m.nombre);
+      if (m.localidad == localidad) {
+        listaMuseosLocalidades.add(m);
       }
     });
     return listaMuseosLocalidades;

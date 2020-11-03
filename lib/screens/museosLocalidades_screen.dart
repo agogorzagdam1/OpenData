@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:museos/models/museosnavarra_model.dart';
 import 'package:museos/provider/museos_provider.dart';
 import 'package:museos/screens/localidades_screens.dart';
 
@@ -38,11 +39,12 @@ class ListaMuseosLocalidadesScreen extends StatelessWidget {
     );
   }
 
-  List<Widget> _listaElementos(List<String> data) {
+  List<Widget> _listaElementos(List<Museo> data) {
     final List<Widget> lst = [];
     data.forEach((element) {
       final w = ListTile(
-        title: Text(element),
+        title: Text(element.nombre),
+        subtitle: Text(element.telefono),
         trailing: Icon(Icons.keyboard_arrow_right),
         onTap: () {},
       );
