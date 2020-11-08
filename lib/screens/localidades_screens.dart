@@ -1,33 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:museos/models/museosnavarra_model.dart';
 import 'package:museos/provider/museos_provider.dart';
-import 'package:museos/screens/localidades_screen.dart';
-import 'package:museos/widget/menu_widget.dart';
+import 'package:museos/screens/museosLocalidades_screen.dart';
 
-class ListaMuseosLocalidadesScreen extends StatelessWidget {
+class ListaLocalidadesScreen extends StatelessWidget {
   Map<String, Object> args = new Map<String, Object>();
   @override
   Widget build(BuildContext context) {
-    args = Get.arguments;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Museos por localidad'),
+        title: Text('Localidades'),
       ),
       body: _lista(context),
-      drawer: MenuPaginaPrincipal(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Get.offAll(ListaLocalidadesScreen(), arguments: args);
-        },
-        child: Icon(Icons.arrow_back),
-      ),
     );
   }
 
   Widget _lista(BuildContext context) {
     return FutureBuilder(
-      future: museosProvider.cargarMuseosLocalidades(args['localidad']),
+      future: museosProvider.cargarLocalidades(),
       initialData: [],
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
@@ -41,14 +31,16 @@ class ListaMuseosLocalidadesScreen extends StatelessWidget {
     );
   }
 
-  List<Widget> _listaElementos(List<Museo> data) {
+  List<Widget> _listaElementos(List<String> data) {
     final List<Widget> lst = [];
     data.forEach((element) {
       final w = ListTile(
-        title: Text(element.nombre),
-        subtitle: Text(element.telefono),
+        title: Text(element),
         trailing: Icon(Icons.keyboard_arrow_right),
-        onTap: () {},
+        onTap: () {
+          args['localidad'] = element;
+          Get.offAll(ListaMuseosLocalidadesScreen(), arguments: args);
+        },
       );
       lst.add(w);
     });
