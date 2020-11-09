@@ -24,7 +24,6 @@ class SwiperWidget extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
           onTap: () {
-            //print("url: " + lista[index].getWebUrl());
             Navigator.push(
                 context,
                 MaterialPageRoute(
