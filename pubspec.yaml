@@ -29,6 +29,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
+  flutter_swiper: ^1.1.6
+  webview_flutter: ^1.0.5
 
 dev_dependencies:
   flutter_test:
@@ -49,6 +51,17 @@ flutter:
   assets:
     - assets/data/museos_es.json
     - assets/images/imagen_menu.jpg
+    - assets/images/placeholder.jpg
+    - assets/images/ecomuseo_de_zubieta.jpg
+    - assets/images/las_eretas.jpg
+    - assets/images/museo_de_tudela.jpg
+    - assets/images/museo_de_tulebras.jpg
+    - assets/images/museo_julian_gayarre.jpg
+    - assets/images/museo-de-navarra.jpg
+    - assets/images/museo-del-carlismo.jpg
+    - assets/images/museo-gustavo-de-maeztu.jpg
+    - assets/images/museo-jorge-oteiza.jpg
+    - assets/images/museo-munoz-sola.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

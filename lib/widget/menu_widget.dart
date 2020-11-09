@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:museos/screens/galeria_screen.dart';
 
 import 'package:museos/screens/localidades_screen.dart';
 
@@ -31,7 +32,7 @@ class MenuPaginaPrincipal extends StatelessWidget {
             leading: Icon(Icons.image, color: Colors.black),
             title: Text("Galería de imágenes"),
             onTap: () {
-              Get.offAll(ListaLocalidadesScreen());
+              Get.offAll(PaginaGaleriaScreen());
             },
           ),
         ],

@@ -1,11 +1,22 @@
 import 'dart:convert';
 
-Museo museoFromJson(String str) =>
-    Museo.fromJson(json.decode(str));
+Museo museoFromJson(String str) => Museo.fromJson(json.decode(str));
 
 String museoToJson(Museo data) => json.encode(data.toJson());
 
 class Museo {
+  final _path = "assets/images/";
+
+  final _web = "";
+
+  getPath() {
+    return _path + this.imagen;
+  }
+
+  getWebUrl() {
+    return _web + this.web;
+  }
+
   Museo({
     this.id,
     this.imagen,

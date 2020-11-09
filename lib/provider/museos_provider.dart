@@ -21,6 +21,7 @@ class MuseosProvider {
 
   List<String> listaLocalidades = [];
   List<Museo> listaMuseosLocalidades = [];
+  List<Museo> listaGaleria = [];
 
   Future<List<Museo>> cargarMuseos() async {
     final data = await rootBundle.loadString("assets/data/museos_es.json");
@@ -56,6 +57,19 @@ class MuseosProvider {
       }
     });
     return listaMuseosLocalidades;
+  }
+
+  Future<List<Museo>> cargarGaleria() async {
+    if (listamuseos.length == 0) {
+      await cargarMuseos();
+    }
+    listaGaleria = [];
+    listamuseos.forEach((m) {
+      if (m.tipo == "Museo") {
+        listaGaleria.add(m);
+      }
+    });
+    return listaGaleria;
   }
 }
 
