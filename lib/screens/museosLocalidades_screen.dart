@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:museos/models/museosnavarra_model.dart';
 import 'package:museos/provider/museos_provider.dart';
 import 'package:museos/screens/localidades_screen.dart';
@@ -7,8 +8,10 @@ import 'package:museos/widget/menu_widget.dart';
 
 class ListaMuseosLocalidadesScreen extends StatelessWidget {
   Map<String, Object> args = new Map<String, Object>();
+  final box = GetStorage();
   @override
   Widget build(BuildContext context) {
+    box.write('museo', null);
     args = Get.arguments;
     return Scaffold(
       appBar: AppBar(
@@ -27,7 +30,8 @@ class ListaMuseosLocalidadesScreen extends StatelessWidget {
 
   Widget _lista(BuildContext context) {
     return FutureBuilder(
-      future: museosProvider.cargarMuseosLocalidades(args['localidad']),
+      future: museosProvider
+          .cargarMuseosLocalidades(box.read('localidad') ?? args['localidad']),
       initialData: [],
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {

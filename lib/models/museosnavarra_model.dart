@@ -7,7 +7,7 @@ String museoToJson(Museo data) => json.encode(data.toJson());
 class Museo {
   final _path = "assets/images/";
 
-  final _web = "";
+  final _web = "https://";
 
   getPath() {
     return _path + this.imagen;

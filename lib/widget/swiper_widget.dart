@@ -18,8 +18,8 @@ class SwiperWidget extends StatelessWidget {
   Widget _swiper(context) {
     final screenSize = MediaQuery.of(context).size;
     return new Swiper(
-      itemWidth: screenSize.width,
-      itemHeight: screenSize.height,
+      itemWidth: screenSize.width * 0.8,
+      itemHeight: screenSize.height * 0.8,
       layout: SwiperLayout.TINDER,
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
@@ -39,7 +39,6 @@ class SwiperWidget extends StatelessWidget {
         );
       },
       itemCount: lista.length,
-      control: new SwiperControl(),
     );
   }
 }

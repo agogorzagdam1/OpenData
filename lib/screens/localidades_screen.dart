@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:museos/provider/museos_provider.dart';
 import 'package:museos/screens/museosLocalidades_screen.dart';
 import 'package:museos/screens/paina_principal_screen.dart';
@@ -7,8 +8,11 @@ import 'package:museos/widget/menu_widget.dart';
 
 class ListaLocalidadesScreen extends StatelessWidget {
   Map<String, Object> args = new Map<String, Object>();
+  final box = GetStorage();
   @override
   Widget build(BuildContext context) {
+    box.write('localidad', null);
+    box.write('museo', null);
     return Scaffold(
       appBar: AppBar(
         title: Text('Localidades'),
@@ -47,6 +51,7 @@ class ListaLocalidadesScreen extends StatelessWidget {
         title: Text(element),
         trailing: Icon(Icons.keyboard_arrow_right),
         onTap: () {
+          box.write('localidad', element);
           args['localidad'] = element;
           Get.offAll(ListaMuseosLocalidadesScreen(), arguments: args);
         },
