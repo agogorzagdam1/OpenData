@@ -1,5 +1,6 @@
 import 'package:museos/screens/museosLocalidades_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:museos/screens/pagina_principal_screen.dart';
 
 import 'package:splashscreen/splashscreen.dart';
 
@@ -9,7 +10,7 @@ class CargarPantallaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return new SplashScreen(
         seconds: 10,
-        navigateAfterSeconds: ListaMuseosLocalidadesScreen(),
+        navigateAfterSeconds: PaginaPrincipalScreen(),
         title: new Text(
           'Espacios Naturales',
           style: new TextStyle(fontStyle: FontStyle.italic, fontSize: 30.0),

@@ -24,6 +24,7 @@ class MenuPaginaPrincipal extends StatelessWidget {
             title: Text("Buscar Museos"),
             onTap: () {
               Get.offAll(ListaLocalidadesScreen());
+              
             },
           ),
           Divider(),
