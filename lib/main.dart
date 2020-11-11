@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/root_widget.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:museos/screens/galeria_screen.dart';
 import 'package:museos/screens/localidades_screen.dart';
-import 'package:museos/screens/museosLocalidades_screen.dart';
-import 'package:museos/screens/paina_principal_screen.dart';
+import 'package:museos/screens/pagina_principal_screen.dart';
 
 //void main() => runApp(MyApp());
 main() async {
@@ -27,7 +25,6 @@ class MyApp extends StatelessWidget {
           : (localidad != null)
               ? PaginaPrincipalScreen()
               : PaginaPrincipalScreen(),
-
       //home: PaginaPrincipalScreen(),
     );
   }

@@ -4,6 +4,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:museos/models/museosnavarra_model.dart';
 import 'package:museos/provider/museos_provider.dart';
 import 'package:museos/screens/localidades_screen.dart';
+import 'package:museos/screens/mapa_museos.dart';
 import 'package:museos/widget/menu_widget.dart';
 
 class ListaMuseosLocalidadesScreen extends StatelessWidget {
@@ -52,7 +53,10 @@ class ListaMuseosLocalidadesScreen extends StatelessWidget {
         title: Text(element.nombre),
         subtitle: Text(element.telefono),
         trailing: Icon(Icons.keyboard_arrow_right),
-        onTap: () {},
+        onTap: () {
+          Get.offAll(MapaMuseosScreen(), arguments: element);
+        },
+
       );
       lst.add(w);
     });

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:museos/provider/museos_provider.dart';
 import 'package:museos/screens/museosLocalidades_screen.dart';
-import 'package:museos/screens/paina_principal_screen.dart';
+import 'package:museos/screens/pagina_principal_screen.dart';
 import 'package:museos/widget/menu_widget.dart';
 
 class ListaLocalidadesScreen extends StatelessWidget {

@@ -22,18 +22,18 @@ class _WebViewScreenState extends State<WebViewScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     print("MUSEO: " + widget.museo.getWebUrl());
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.museo.nombre),
       ),
       body: Container(
-        height: 511,
+        height: screenSize.height * 0.8645,
         child: Column(
-          
           children: [
             Container(
-              height: 511,
+              height: screenSize.height * 0.8645,
               child: WebView(
                 initialUrl: widget.museo.getWebUrl(),
                 javascriptMode: JavascriptMode.unrestricted,
