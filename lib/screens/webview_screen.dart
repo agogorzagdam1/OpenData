@@ -29,11 +29,11 @@ class _WebViewScreenState extends State<WebViewScreen> {
         title: Text(widget.museo.nombre),
       ),
       body: Container(
-        height: screenSize.height * 0.8645,
+        height: screenSize.height * 0.91,
         child: Column(
           children: [
             Container(
-              height: screenSize.height * 0.8645,
+              height: screenSize.height * 0.91,
               child: WebView(
                 initialUrl: widget.museo.getWebUrl(),
                 javascriptMode: JavascriptMode.unrestricted,
